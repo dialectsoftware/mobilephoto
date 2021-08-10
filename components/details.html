@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Mobile photo app with MobileNet integration" />
+        <meta name="author" content="Dialect Software LLC" />
+        <title>iMAGE Shop</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand fw-bold" href="index.html">mobile photo app</a>    
+                <button class="btn btn-primary px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal" onclick="javascript:window.location.reload()">
+                    <i class="bi-camera me-1"></i>Capture Image</a></li>
+                </button>
+            </div>
+        </nav>
+        <!-- Product section-->
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-5 mb-md-0" data-bind="attr:{src: imagePath}" alt="..." />
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="font-alt"><b>Image</b></h3>
+                        <a data-bind="attr:{href: imagePath}"><div class="small mb-1" data-bind="text: imagePath"></div></a>
+                        <h3 class="font-alt"><b>Labels</b></h3>
+                        <div id="labels" class="fs-5 mb-3" data-bind="text: tags"></div>
+                        <div data-bind="attr: { class: items().filter(item=>item.key=='status')[0].value == '404' && items().filter(item=>item.key=='url')[0].value == '' ? '' : 'hidden' }" style="background-color: lightgray;">
+                            <b>Did You Know?</b>
+                            <pre class="text-muted">
+For testing you can have the application call a custom API 
+by including the url to the endpoint after the #. For example,
+adding /app.html#https://127.0.0.1/api will POST the JPEG 
+binary data, in a formdata field called image, to an 
+endpoint on the localhost. Any parameters, including API
+keys, will have to be passed in the query sting. For example 
+/app.html#https://127.0.0.1/api?apikey=XXXXXXX. For more 
+sophisticated calling conventions, including those requiring 
+custom headers, you will have to modify the behaviour of the
+post function in app.js.
+                            </pre>
+                        </div>
+                        <span data-bind="attr: { class: items().filter(item=>item.key=='status')[0].value == '404' && items().filter(item=>item.key=='url')[0].value == ''  ? 'hidden' : '' }">
+                            <ul data-bind="foreach: items" style="list-style-type: square;">
+                                <li> 
+                                    <span class="id" data-bind="text: key"></span>:
+                                    <span data-bind="text: value"></span>
+                                </li>
+                            </ul>
+                        </span>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; Dialect Software LLC 2021. All Rights Reserved.</div>
+                </div>
+                <div class="text-white-50 small">
+                    <div class="mb-2">MIT LICENSE</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
