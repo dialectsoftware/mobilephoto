@@ -56,12 +56,7 @@ post function in app.js.
                             </pre>
                         </div>
                         <span data-bind="attr: { class: (items().filter(item=>item.key=='status')[0].value == '404' ||  items().filter(item=>item.key=='status')[0].value == '405')  && items().filter(item=>item.key=='url')[0].value == ''  ? 'hidden' : '' }">
-                            <ul data-bind="foreach: items" style="list-style-type: square;">
-                                <li> 
-                                    <span class="id" data-bind="text: key"></span>:
-                                    <span data-bind="text: value"></span>
-                                </li>
-                            </ul>
+                            <pre data-bind="text: results"></pre>
                         </span>
                    </div>
                 </div>
