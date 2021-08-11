@@ -40,8 +40,8 @@
                         <a data-bind="attr:{href: imagePath}"><div class="small mb-1" data-bind="text: imagePath"></div></a>
                         <h3 class="font-alt"><b>Labels</b></h3>
                         <div id="labels" class="fs-5 mb-3" data-bind="text: tags"></div>
-                        <div data-bind="attr: { class: ['404','405'].includes(items().filter(item=>item.key=='status')[0].value) && items().filter(item=>item.key=='url')[0].value == '' ? '' : 'hidden' }" style="background-color: lightgray;">
-                            <b>Did You Know?</b>
+                        <div data-bind="attr: { class: (items().filter(item=>item.key=='status')[0].value == '404' ||  items().filter(item=>item.key=='status')[0].value == '405')  && items().filter(item=>item.key=='url')[0].value == '' ? '' : 'hidden' }" style="background-color: lightgray;">
+                            <b>Custom API Support</b>
                             <pre class="text-muted">
 For testing you can have the application call a custom API 
 by including the url to the endpoint after the #. For example,
@@ -55,7 +55,7 @@ custom headers, you will have to modify the behaviour of the
 post function in app.js.
                             </pre>
                         </div>
-                        <span data-bind="attr: { class: ['404','405'].includes(items().filter(item=>item.key=='status')[0].value) && items().filter(item=>item.key=='url')[0].value == ''  ? 'hidden' : '' }">
+                        <span data-bind="attr: { class: (items().filter(item=>item.key=='status')[0].value == '404' ||  items().filter(item=>item.key=='status')[0].value == '405')  && items().filter(item=>item.key=='url')[0].value == ''  ? 'hidden' : '' }">
                             <ul data-bind="foreach: items" style="list-style-type: square;">
                                 <li> 
                                     <span class="id" data-bind="text: key"></span>:
