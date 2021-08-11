@@ -31,7 +31,7 @@
         <!-- Product section-->
         <section class="py-5">
             <div class="container">
-                <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="row gx-4 gx-lg-5 align-items-top">
                     <div class="col-md-6">
                         <img class="card-img-top mb-5 mb-md-0" data-bind="attr:{src: imagePath}" alt="..." />
                     </div>
@@ -44,11 +44,11 @@
                             <b>Custom API Support</b>
                             <pre class="text-muted">
 For testing you can have the application call a custom API 
-by including the url to the endpoint after the #. For example,
+by including the URL to the endpoint after the #. For example,
 adding /app.html#https://127.0.0.1/api will POST the JPEG 
 binary data, in a formdata field called image, to an 
 endpoint on the localhost. Any parameters, including API
-keys, will have to be passed in the query sting. For example 
+keys, will have to be passed in the query string. For example 
 /app.html#https://127.0.0.1/api?apikey=XXXXXXX. For more 
 sophisticated calling conventions, including those requiring 
 custom headers, you will have to modify the behaviour of the

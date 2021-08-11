@@ -119,7 +119,15 @@ function render(url, label, data) {
         viewModel.tags(label);
         viewModel.results(data);
         Object.keys(data).forEach(key=>{
-            viewModel.items.push({key:key,value:data[key]})
+            switch(key) {
+                case "url":
+                case "status":
+                    viewModel.items.push({key:key,value:data[key]})
+                break;
+                default:
+                    viewModel.items.push({key:key,value:JSON.stringify(data[key], null, 2)})
+            }
+            
         })
         var view  = document.getElementById("view")
         view.innerHTML = html;
