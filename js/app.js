@@ -27,6 +27,7 @@ var viewModel = {
     tags: ko.observable(),// Initially blank
     results: ko.observable(),// Initially blank
     imagePath: ko.observable(), // Initially blank
+    items: ko.observableArray([])
 };
 
 window.addEventListener("orientationchange", function() {
@@ -117,6 +118,9 @@ function render(url, label, data) {
         viewModel.imagePath(url);
         viewModel.tags(label);
         viewModel.results(JSON.stringify(data, null, 2));
+        Object.keys(data).forEach(key=>{
+            viewModel.items.push({key:key,value:data[key]});
+        })
         var view  = document.getElementById("view")
         view.innerHTML = html;
         ko.applyBindings(viewModel, view)
