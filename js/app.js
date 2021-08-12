@@ -88,6 +88,7 @@ async function start() {
             
         })
         .catch(function(error) {
+            alert("Oops. Something is broken. \r\n If you are using this on an IPhone\r\n you will need to use Safari and have \r\n camera access enabled.\r\n", error);
             console.error("Oops. Something is broken.", error);
     });
 }
